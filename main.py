@@ -49,7 +49,7 @@ pio.templates["plotly_white"]["layout"]["yaxis"]["gridcolor"] = 'lightgray'
 
 # --DASHBOARD SETUP--
 app = Dash(__name__)
-server = app.server  # for Render deployment
+server = app.server  # for Hugging Face deployment
 
 app.layout = html.Div(
     style={"padding": "20px", "fontFamily": "Verdana, sans-serif", "backgroundColor": "#fdfdfd"},
@@ -410,4 +410,4 @@ def toggle_radio(tab):
     return {"display": "none"}
 
 if __name__ == "__main__":
-    app.run(debug=True, dev_tools_ui=False)
+    app.run()
