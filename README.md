@@ -1,4 +1,4 @@
-# Colorado-Crimes-Dashboard
+# Colorado Crimes Dashboard
 
 Colorado Crimes Dashboard is a data visualization project that gives some insights into crime trends that were reported in Colorado from 2016 to 2023. It features a choropleth map showing the crime distribution across counties, in which users can click on a county to see a more detailed breakdown of top crimes in the area via a bar chart; both years and crime categories can be filtered for this view. The tabbed section allows for a statewide view of crime trends which are influenced by the selected year. Lastly, the profile summary gives a quick snapshot of the crimes in the state; this was meant to fill in the gap below the map without overwhelming the user with too much information.
 
@@ -14,8 +14,7 @@ The county borders file was taken from [Colorado Counties GeoJSON](https://githu
 - Pandas/NumPy: For data manipulation and analysis
 - GeoPandas: For creating the choropleth map
 
-
-## Directions for Use
+## Directions for Running Locally
 > **Note**: Github does not support files over 100MB, so I have used lfs to store the colorado crimes csv file. If you clone the repository, make sure to install git lfs and pull the file thereafter.
 
 
@@ -23,4 +22,9 @@ The county borders file was taken from [Colorado Counties GeoJSON](https://githu
 2. Make sure to download the data files using git lfs
 3. Run `main.py` to start the Dash app
 4. Open the localhost URL (most likely localhost:8050) in a web browser to interact with the dashboard
+
+
+## Run the App 
+### The app is hosted on Hugging Face Spaces. It can be accessed here: [Colorado Crimes Dashboard Link](https://huggingface.co/spaces/egenvir/Colorado-Crimes-Dashboard).
+
 
