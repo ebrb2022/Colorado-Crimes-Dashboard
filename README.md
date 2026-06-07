@@ -11,7 +11,8 @@ The county borders file was taken from [Colorado Counties GeoJSON](https://githu
 ## Libraries Used
 - Dash: For building the interactive web app
 - Plotly: For creating the viz
-- Pandas: For reading and manipulating the data
+- Pandas/NumPy: For data manipulation and analysis
+- GeoPandas: For creating the choropleth map
 
 
 ## Directions for Use

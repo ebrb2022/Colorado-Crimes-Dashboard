@@ -671,3 +671,6 @@ def toggle_radio(tab):
 # MAIN
 if __name__ == "__main__":
     app.run(debug=True, dev_tools_ui = False)
+
+# for the Render deployment
+server = app.server
