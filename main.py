@@ -28,7 +28,7 @@ crimes_df['month'] = crimes_df['incident_date'].dt.to_period('M').dt.to_timestam
 
 the_years = sorted(crimes_df["year"].unique())
 
-# can keep adding to it since there are quire a few long offense names
+# can keep adding to it since there are quite a few of long offense names
 shorten_name = {
     "Destruction/Damage/Vandalism of Property": "Vandalism/Property Damage",
     "Pornography/Obscene Material": "Porn/Obscene Material",
@@ -214,7 +214,7 @@ app.layout = html.Div(
 
 # --CALLBACKS--
 
-# PROFILE SUMMARY
+# THE PROFILE SUMMARY
 @app.callback(
     [
         Output("yearly-offense-total", "children"),
@@ -249,7 +249,7 @@ def update_profile_summary(year, crime_type):
     return year_total, top_offense, top_county, hist_total, profile_title
 
 
-# STATEWIDE OVERVIEW GRAPHS
+# THE STATEWIDE OVERVIEW GRAPHS
 @app.callback(
     Output("statewide-overview-graph", "figure"),
     [Input("year-slider", "value"), Input("statewide-tabs", "value"), Input("trend-view-type", "value")]
@@ -322,8 +322,8 @@ def update_statewide_dashboard(year, tab, radio):
         else:
             month_counts = filtered_df.groupby("month").size().reset_index(name="total_crimes").sort_values(by="month")
             fig = px.line(month_counts, x="month", y="total_crimes", title=f"Monthly Crime Trends in {year}", markers=True)
-            fig.update_layout(showlegend=False, yaxis=dict(range=[0, max_val * 1.1]))
-            
+            fig.update_layout(showlegend=False)
+
         fig.update_layout(
             title_x=0.5, xaxis_title="Month", yaxis_title="Total Crimes",
             xaxis=dict(tickformat="%b", dtick="M1", tickmode="linear"),
@@ -331,7 +331,7 @@ def update_statewide_dashboard(year, tab, radio):
         )
         return fig
 
-# COUNTY OFFENSE BREAKDOWN
+# THE COUNTY-SPECIFIC OFFENSE BREAKDOWN
 @app.callback(
     Output("county-offense-graph", "figure"),
     [Input("year-slider", "value"), Input("crime-type-dropdown", "value"), Input("crime-map", "clickData"), Input("crime-map", "selectedData")]
@@ -367,7 +367,7 @@ def update_county_graph(year, crime_type, clickData, selectedData):
     fig.update_layout(title_x=0.5, coloraxis_showscale=False)
     return fig
 
-# CHOROPLETH MAP
+# THE CHOROPLETH MAP
 @app.callback(
     Output("crime-map", "figure"),
     [Input("year-slider", "value"), Input("crime-type-dropdown", "value")]
